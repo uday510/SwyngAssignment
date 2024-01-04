@@ -16,7 +16,7 @@ function requestTime(req, res, next) {
 app.use(requestTime); // logs request time
 console.clear();
 app.use(cors({
-  origin: 'https://slot-booking-beryl.vercel.app/', // Replace with your frontend URL
+  origin: 'https://slot-booking-beryl.vercel.app', // Replace with your frontend URL
   methods: ['GET', 'POST'], // Specify the allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed headers
 }));
