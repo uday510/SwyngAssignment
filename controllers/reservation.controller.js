@@ -8,9 +8,15 @@ const createReservation = async (req, res) => {
       return res.status(500).json({ error: "Required fields are missing." })
     }
 
+    // console.log("Body -->", req.body);
+
     const newReservation = new Reservation({ name, email, phone, slot });
 
+    // console.log("Success --> ", newReservation);
+
     const savedReservation = await newReservation.save();
+
+    // console.log("Success --> ", savedReservation);
 
     res.status(201).json(savedReservation);
   } catch (error) {
@@ -18,7 +24,6 @@ const createReservation = async (req, res) => {
     res.status(500).json({ error: 'An error occurred while creating the reservation' });
   }
 };
-
 
 module.exports = {
   createReservation
